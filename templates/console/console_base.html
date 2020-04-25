@@ -1,0 +1,1015 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Nimbus Web Server is a Cloud Based Solution Providing Company.">
+    <meta name="author" content="nimbus web server">
+
+    <title>Console</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'console' %}">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3"> NWS </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'console' %}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'machineimages' %}">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Machine Images</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Services
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Compute Engine</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Compute Engines:</h6>
+                        <a class="collapse-item" href="{% url 'ceinstance' %}">VM Instances</a>
+                        <a class="collapse-item" href="{% url 'ceinstancegroups' %}">Instance Groups</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>App Engine</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">App Engines:</h6>
+                        <a class="collapse-item" href="{% url 'aeinstance' %}">VM Instances</a>
+                        <a class="collapse-item" href="{% url 'aeinstancegroups' %}">Instance Groups</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Database</span>
+                </a>
+                <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Database:</h6>
+                        <a class="collapse-item" href="{% url 'dbinstance' %}">Running Database</a>
+                        <a class="collapse-item" href="{% url 'dbinstancegroups' %}">Database Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse4"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Infastructure</span>
+                </a>
+                <div id="collapse4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Infastructure:</h6>
+                        <a class="collapse-item" href="{% url 'isinstance' %}">Running Infastructures</a>
+                        <a class="collapse-item" href="{% url 'isinstancegroups' %}">Infastructure Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse5"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>CMS</span>
+                </a>
+                <div id="collapse5" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">CMS:</h6>
+                        <a class="collapse-item" href="{% url 'cmsinstance' %}">Running CMS</a>
+                        <a class="collapse-item" href="{% url 'cmsinstancegroups' %}">CMS Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse6"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Developer Tools</span>
+                </a>
+                <div id="collapse6" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Developer Tools:</h6>
+                        <a class="collapse-item" href="{% url 'dtinstance' %}">Running Developer Tools</a>
+                        <a class="collapse-item" href="{% url 'dtinstancegroups' %}">Developer Tools Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse7"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>E-Commerce</span>
+                </a>
+                <div id="collapse7" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">E-Commerce:</h6>
+                        <a class="collapse-item" href="{% url 'ecinstance' %}">Running E-Commerce</a>
+                        <a class="collapse-item" href="{% url 'ecinstancegroups' %}">E-Commerce Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse8"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>CRM</span>
+                </a>
+                <div id="collapse8" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">CRM:</h6>
+                        <a class="collapse-item" href="{% url 'crminstance' %}">Running CRM</a>
+                        <a class="collapse-item" href="{% url 'crminstancegroups' %}">CRM Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse9"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Business Intelligence</span>
+                </a>
+                <div id="collapse9" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Business Intelligence:</h6>
+                        <a class="collapse-item" href="{% url 'biinstance' %}">Running Business Intelligence</a>
+                        <a class="collapse-item" href="{% url 'biinstancegroups' %}">Business Intelligence Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse10"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Chat</span>
+                </a>
+                <div id="collapse10" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Chat:</h6>
+                        <a class="collapse-item" href="{% url 'chatinstance' %}">Running Chat</a>
+                        <a class="collapse-item" href="{% url 'chatinstancegroups' %}">Chat Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse11"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Analytics</span>
+                </a>
+                <div id="collapse11" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Analytics:</h6>
+                        <a class="collapse-item" href="{% url 'analyticsinstance' %}">Running Analytics</a>
+                        <a class="collapse-item" href="{% url 'analyticsinstancegroups' %}">Analytics Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse12"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Bug Tracking</span>
+                </a>
+                <div id="collapse12" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Bug Tracking:</h6>
+                        <a class="collapse-item" href="{% url 'btinstance' %}">Running Bug Tracking</a>
+                        <a class="collapse-item" href="{% url 'btinstancegroups' %}">Bug Tracking Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse13"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Version Control</span>
+                </a>
+                <div id="collapse13" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Version Control:</h6>
+                        <a class="collapse-item" href="{% url 'vcinstance' %}">Running Version Control</a>
+                        <a class="collapse-item" href="{% url 'vcinstancegroups' %}">Version Control Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse14"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Email Service</span>
+                </a>
+                <div id="collapse14" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Email Service:</h6>
+                        <a class="collapse-item" href="{% url 'einstance' %}">Running Email Service</a>
+                        <a class="collapse-item" href="{% url 'einstancegroups' %}">Email Service Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse15"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Forum</span>
+                </a>
+                <div id="collapse15" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Forum:</h6>
+                        <a class="collapse-item" href="{% url 'finstance' %}">Running Forum</a>
+                        <a class="collapse-item" href="{% url 'finstancegroups' %}">Forum Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse16"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Code Review</span>
+                </a>
+                <div id="collapse16" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Code Review:</h6>
+                        <a class="collapse-item" href="{% url 'crinstance' %}">Running Code Review</a>
+                        <a class="collapse-item" href="{% url 'crinstancegroups' %}">Code Review Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse17"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Binary Repository</span>
+                </a>
+                <div id="collapse17" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Binary Repository:</h6>
+                        <a class="collapse-item" href="{% url 'brinstance' %}">Running Binary Repository</a>
+                        <a class="collapse-item" href="{% url 'brinstancegroups' %}">Binary Repository Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse18"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Human Resource Management</span>
+                </a>
+                <div id="collapse18" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Human Resource Management:</h6>
+                        <a class="collapse-item" href="{% url 'hrminstance' %}">Running HRMs</a>
+                        <a class="collapse-item" href="{% url 'hrminstancegroups' %}">HRM Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse19"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Media Sharing</span>
+                </a>
+                <div id="collapse19" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Media Sharing:</h6>
+                        <a class="collapse-item" href="{% url 'msinstance' %}">Running MSs</a>
+                        <a class="collapse-item" href="{% url 'msinstancegroups' %}">MS Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse20"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Search Service</span>
+                </a>
+                <div id="collapse20" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Search Service:</h6>
+                        <a class="collapse-item" href="{% url 'sinstance' %}">Running Search Service</a>
+                        <a class="collapse-item" href="{% url 'sinstancegroups' %}">Search Service Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse21"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Photo Sharing</span>
+                </a>
+                <div id="collapse21" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Photo Sharing:</h6>
+                        <a class="collapse-item" href="{% url 'psinstance' %}">Running PSs</a>
+                        <a class="collapse-item" href="{% url 'psinstancegroups' %}">PS Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse22"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Collaboration</span>
+                </a>
+                <div id="collapse22" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Collaboration:</h6>
+                        <a class="collapse-item" href="{% url 'cinstance' %}">Running Collaborations</a>
+                        <a class="collapse-item" href="{% url 'cinstancegroups' %}">Collaboration Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse23"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Marketing Automation</span>
+                </a>
+                <div id="collapse23" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Marketing Automation:</h6>
+                        <a class="collapse-item" href="{% url 'mainstance' %}">Running MAs</a>
+                        <a class="collapse-item" href="{% url 'mainstancegroups' %}">MA Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse24"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Poll Management</span>
+                </a>
+                <div id="collapse24" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Poll Management:</h6>
+                        <a class="collapse-item" href="{% url 'pminstance' %}">Running PMs</a>
+                        <a class="collapse-item" href="{% url 'pminstancegroups' %}">PM Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse25"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Portal Server</span>
+                </a>
+                <div id="collapse25" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Portal Server:</h6>
+                        <a class="collapse-item" href="{% url 'portsinstance' %}">Running PSs</a>
+                        <a class="collapse-item" href="{% url 'portsinstancegroups' %}">PS Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse26"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>E-Learning</span>
+                </a>
+                <div id="collapse26" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">E-Learning:</h6>
+                        <a class="collapse-item" href="{% url 'elinstance' %}">Running E-Ls</a>
+                        <a class="collapse-item" href="{% url 'elinstancegroups' %}">E-L Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse27"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Wiki</span>
+                </a>
+                <div id="collapse27" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Wiki:</h6>
+                        <a class="collapse-item" href="{% url 'winstance' %}">Running Wiki</a>
+                        <a class="collapse-item" href="{% url 'winstancegroups' %}">Wiki Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse28"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Translation Tools</span>
+                </a>
+                <div id="collapse28" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Translation Tools:</h6>
+                        <a class="collapse-item" href="{% url 'ttinstance' %}">Running TTs</a>
+                        <a class="collapse-item" href="{% url 'ttinstancegroups' %}">TT Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse29"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Remote Desktop</span>
+                </a>
+                <div id="collapse29" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Remote Desktop:</h6>
+                        <a class="collapse-item" href="{% url 'rdinstance' %}">Running RDs</a>
+                        <a class="collapse-item" href="{% url 'rdinstancegroups' %}">RD Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse30"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Testing</span>
+                </a>
+                <div id="collapse30" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Testing:</h6>
+                        <a class="collapse-item" href="{% url 'tinstance' %}">Running Testings</a>
+                        <a class="collapse-item" href="{% url 'tinstancegroups' %}">Testing Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse31"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Online Classifieds</span>
+                </a>
+                <div id="collapse31" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Online Classifieds:</h6>
+                        <a class="collapse-item" href="{% url 'ocinstance' %}">Running OCs</a>
+                        <a class="collapse-item" href="{% url 'ocinstancegroups' %}">OC Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse32"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Social Networking</span>
+                </a>
+                <div id="collapse32" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Social Networking:</h6>
+                        <a class="collapse-item" href="{% url 'sninstance' %}">Running SNs</a>
+                        <a class="collapse-item" href="{% url 'sninstancegroups' %}">SN Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse33"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Continuous Integration</span>
+                </a>
+                <div id="collapse33" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Continuous Integration:</h6>
+                        <a class="collapse-item" href="{% url 'ciinstance' %}">Running CIs</a>
+                        <a class="collapse-item" href="{% url 'ciinstancegroups' %}">CI Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse34"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Project Management</span>
+                </a>
+                <div id="collapse34" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Project Management:</h6>
+                        <a class="collapse-item" href="{% url 'prominstance' %}">Running PMs</a>
+                        <a class="collapse-item" href="{% url 'prominstancegroups' %}">PM Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse35"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>News Aggregator</span>
+                </a>
+                <div id="collapse35" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">News Aggregator:</h6>
+                        <a class="collapse-item" href="{% url 'nainstance' %}">Running NAs</a>
+                        <a class="collapse-item" href="{% url 'nainstancegroups' %}">NA Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse36"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Accounting</span>
+                </a>
+                <div id="collapse36" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Accounting:</h6>
+                        <a class="collapse-item" href="{% url 'accinstance' %}">Running Accounting</a>
+                        <a class="collapse-item" href="{% url 'accinstancegroups' %}">Accounting Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse37"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Newsletter Manager</span>
+                </a>
+                <div id="collapse37" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Newsletter Manager:</h6>
+                        <a class="collapse-item" href="{% url 'nminstance' %}">Running NMs</a>
+                        <a class="collapse-item" href="{% url 'nminstancegroups' %}">NM Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse38"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>ERP</span>
+                </a>
+                <div id="collapse38" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">ERP:</h6>
+                        <a class="collapse-item" href="{% url 'erpinstance' %}">Running ERPs</a>
+                        <a class="collapse-item" href="{% url 'erpinstancegroups' %}">ERP Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse39"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>BPM</span>
+                </a>
+                <div id="collapse39" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">BPM:</h6>
+                        <a class="collapse-item" href="{% url 'bpminstance' %}">Running BPM</a>
+                        <a class="collapse-item" href="{% url 'bpminstancegroups' %}">BPM Groups</a>
+                    </div>
+                </div>
+            </li>
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'community' %}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Community</span></a>
+            </li>
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Support</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Supports:</h6>
+
+                        <a class="collapse-item" href="{% url 'chatsupport' %}">Chat Support</a>
+                        <a class="collapse-item" href="{% url 'community' %}">Community Support</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Help
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'gettingstarted' %}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Getting Started</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'documentation' %}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Documentation</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'aboutconsole' %}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>About</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+
+
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        {% if user.is_authenticated %}
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Create</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'ceinstance-create' %}">Compute Instance</a>
+                                <a class="dropdown-item" href="{% url 'aeinstance-create' %}">App Instance</a>
+                                <a class="dropdown-item" href="{% url 'dbinstance-create' %}">Database</a>
+                                <a class="dropdown-item" href="{% url 'isinstance-create' %}">Infastructure</a>
+                                <a class="dropdown-item" href="{% url 'cmsinstance-create' %}">CMS</a>
+                                <a class="dropdown-item" href="{% url 'dtinstance-create' %}">Developer Tools</a>
+                                <a class="dropdown-item" href="{% url 'ecinstance-create' %}">E-Commerce</a>
+                                <a class="dropdown-item" href="{% url 'crminstance-create' %}">CRM</a>
+                                <a class="dropdown-item" href="{% url 'biinstance-create' %}">Business Intelligence</a>
+                                <a class="dropdown-item" href="{% url 'chatinstance-create' %}">Chat</a>
+                                <a class="dropdown-item" href="{% url 'analyticsinstance-create' %}">Analytics</a>
+                                <a class="dropdown-item" href="{% url 'btinstance-create' %}">Bug Tracking</a>
+                                <a class="dropdown-item" href="{% url 'vcinstance-create' %}">Version Control</a>
+                                <a class="dropdown-item" href="{% url 'einstance-create' %}">Email Service</a>
+                                <a class="dropdown-item" href="{% url 'finstance-create' %}">Forum</a>
+                                <a class="dropdown-item" href="{% url 'crinstance-create' %}">Code Review</a>
+                                <a class="dropdown-item" href="{% url 'brinstance-create' %}">Binary Repository</a>
+                                <a class="dropdown-item" href="{% url 'hrminstance-create' %}">Human Resource
+                                    Management</a>
+                                <a class="dropdown-item" href="{% url 'msinstance-create' %}">Media Sharing</a>
+                                <a class="dropdown-item" href="{% url 'sinstance-create' %}">Search Service</a>
+                                <a class="dropdown-item" href="{% url 'psinstance-create' %}">Photo Sharing</a>
+                                <a class="dropdown-item" href="{% url 'cinstance-create' %}">Collaboration</a>
+                                <a class="dropdown-item" href="{% url 'mainstance-create' %}">Marketing Automation</a>
+                                <a class="dropdown-item" href="{% url 'pminstance-create' %}">Poll Management</a>
+                                <a class="dropdown-item" href="{% url 'portsinstance-create' %}">Portal Server</a>
+                                <a class="dropdown-item" href="{% url 'elinstance-create' %}">E-Learning</a>
+                                <a class="dropdown-item" href="{% url 'winstance-create' %}">Wiki</a>
+                                <a class="dropdown-item" href="{% url 'ttinstance-create' %}">Translation Tools</a>
+                                <a class="dropdown-item" href="{% url 'rdinstance-create' %}">Remote Desktop</a>
+                                <a class="dropdown-item" href="{% url 'tinstance-create' %}">Testing</a>
+                                <a class="dropdown-item" href="{% url 'ocinstance-create' %}">Online Classifieds</a>
+                                <a class="dropdown-item" href="{% url 'sninstance-create' %}">Social Networking</a>
+                                <a class="dropdown-item" href="{% url 'ciinstance-create' %}">Continuous Integration</a>
+                                <a class="dropdown-item" href="{% url 'prominstance-create' %}">Project Management</a>
+                                <a class="dropdown-item" href="{% url 'nainstance-create' %}">News Aggregator</a>
+                                <a class="dropdown-item" href="{% url 'accinstance-create' %}">Accounting</a>
+                                <a class="dropdown-item" href="{% url 'nminstance-create' %}">Newsletter Manager</a>
+                                <a class="dropdown-item" href="{% url 'erpinstance-create' %}">ERP</a>
+                                <a class="dropdown-item" href="{% url 'bpminstance-create' %}">BPM</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username }}</span>
+                                <img class="img-profile rounded-circle" src="{{ user.profile.image.url }}">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="{% url 'settings' %}">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}" data-toggle="modal"
+                                    data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    {% block content %}
+                    {% endblock %}
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Nimbus Web Server 2020</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="{% url 'account_logout' %}">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+            <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
+            <!-- Page level plugins -->
+            <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
+            <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+
+            <!--Start of Tawk.to Script-->
+            <script type="text/javascript">
+                var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+                (function () {
+                    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                    s1.async = true;
+                    s1.src = 'https://embed.tawk.to/5e70756f8d24fc2265880101/default';
+                    s1.charset = 'UTF-8';
+                    s1.setAttribute('crossorigin', '*');
+                    s0.parentNode.insertBefore(s1, s0);
+                })();
+            </script>
+            <!--End of Tawk.to Script-->
+
+        </div>
+    </div>
+
+</body>
+
+</html>

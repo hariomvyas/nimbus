@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block title %}Delete Post{% endblock title %}
+
+{% block content %}
+<center>
+    <br />
+    <br />
+    <div class="container">
+        <div class="card text-left" style="width: 35rem;">
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <h5 class="card-title">Delete Post</h5>
+                    <h2>Are you sure you want to delete "{{ object.post_title }}"?</h2>
+                    <button class="btn btn-danger" type="submit">Yes, Delete</button>
+                    <a class="btn btn-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</center>
+{% endblock %}

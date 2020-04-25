@@ -1,0 +1,161 @@
+{% extends 'console/console_base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Regular</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Running IP</th>
+                            <th>Running Port</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for instance in crminstance.all %}
+                        {% if instance.user == user and instance.system_group == 'regular' %}
+                        <tr>
+                            <th>{{ instance.title }}</th>
+                            <th>{{ instance.status }}</th>
+                            <th>{{ instance.running_ip }}</th>
+                            <th>{{ instance.running_port }}</th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-update' instance.id %}">Update</a></button></th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-delete' instance.id %}">Delete</a></button></th>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Testing</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Running IP</th>
+                            <th>Running Port</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for instance in crminstance.all %}
+                        {% if instance.user == user and instance.system_group == 'testing' %}
+                        <tr>
+                            <th>{{ instance.title }}</th>
+                            <th>{{ instance.status }}</th>
+                            <th>{{ instance.running_ip }}</th>
+                            <th>{{ instance.running_port }}</th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-update' instance.id %}">Update</a></button></th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-delete' instance.id %}">Delete</a></button></th>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Teaching</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Running IP</th>
+                            <th>Running Port</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for instance in crminstance.all %}
+                        {% if instance.user == user and instance.system_group == 'teach' %}
+                        <tr>
+                            <th>{{ instance.title }}</th>
+                            <th>{{ instance.status }}</th>
+                            <th>{{ instance.running_ip }}</th>
+                            <th>{{ instance.running_port }}</th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-update' instance.id %}">Update</a></button></th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-delete' instance.id %}">Delete</a></button></th>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Developement</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Running IP</th>
+                            <th>Running Port</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for instance in crminstance.all %}
+                        {% if instance.user == user and instance.system_group == 'dev' %}
+                        <tr>
+                            <th>{{ instance.title }}</th>
+                            <th>{{ instance.status }}</th>
+                            <th>{{ instance.running_ip }}</th>
+                            <th>{{ instance.running_port }}</th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-update' instance.id %}">Update</a></button></th>
+                            <th><button type="button" class="btn btn-light"><a
+                                        href="{% url 'crminstance-delete' instance.id %}">Delete</a></button></th>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

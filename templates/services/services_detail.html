@@ -1,0 +1,47 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main main-inner main-blog jarallax" data-jarallax='{"speed": 0.7}'>
+    <div class="container">
+        <div class="opener">
+            <h1>{{ object.title }}</h1>
+            <div class="row">
+                <p class="lead col-md-6 col-md-offset-3">by {{ object.type_choices }}</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="content">
+
+    <!-- Blog List -->
+
+    <section class="blog-list bg-light section">
+        <div class="container">
+            <div class="row">
+                <div class="primary col-md-8">
+                    <article class="post">
+                        <div class="post-thumbnail">
+                            <img alt="image post" class="img-responsive" src="{{ object.image.url }}" height="256"
+                                width="256">
+                        </div>
+                        <div class="post-meta">
+                            <div class="post-author">
+                                by <a href="#" class="author">{{ object.type_choices }}</a>
+                            </div>
+                        </div>
+                        <h3 class="post-title">
+                            {{ object.title }}
+                        </h3>
+                        <div class="text-muted">
+                            <p>{{ object.description }}<p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock content %}

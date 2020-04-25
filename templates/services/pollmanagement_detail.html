@@ -1,0 +1,20 @@
+{% extends 'console/console_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container text-center">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Title : {{ object.title }}</li>
+        <li class="list-group-item">Poll Management : {{ object.poll_management }}</li>
+        <li class="list-group-item">RAM : {{ object.ram }}</li>
+        <li class="list-group-item">HardDisk : {{ object.storage }}</li>
+        <li class="list-group-item">CPU : {{ object.cpu }}</li>
+        <li class="list-group-item">System Group : {{ object.system_group }}</li>
+        <li class="list-group-item">Status : {{ object.status }}</li>
+        <li class="list-group-item">Running IP : {{ object.running_ip }}</li>
+        <li class="list-group-item">Running Port : {{ object.running_port }}</li>
+    </ul>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main main-inner main-blog jarallax" data-jarallax='{"speed": 0.7}'>
+    <div class="container">
+        <div class="opener">
+            <h1>{{ object.post_title }}</h1>
+            <div class="row">
+                <p class="lead col-md-6 col-md-offset-3">by {{ object.author }}</p>
+            </div>
+            {% if object.author == user %}
+            <a href="{% url 'post-update' object.id %}"><button type="button"
+                    class="btn btn-primary">Update</button></a>
+            <a href="{% url 'post-delete' object.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+<div class="content">
+
+    <!-- Blog List -->
+
+    <section class="blog-list bg-light section">
+        <div class="container">
+            <div class="row">
+                <div class="primary col-md-8">
+                    <article class="post">
+                        <div class="post-thumbnail">
+                            <img alt="image post" class="img-responsive" src="{{ object.image.url }}" height="390"
+                                width="760">
+                        </div>
+                        <div class="post-meta">
+                            <div class="post-date">
+                                <div class="time">{{ object.date_posted }}</div>
+                            </div>
+                            <div class="post-author">
+                                by <a href="#" class="author">{{ object.author }}</a>
+                            </div>
+                        </div>
+                        <h3 class="post-title">
+                            {{ object.post_title }}
+                        </h3>
+                        <div class="text-muted">
+                            <p>{{ object.content }}<p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,290 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'apple-touch-icon-114x114.png' %}">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Loader -->
+
+    <div class="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+
+    <header class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="brand js-target-scroll">
+                NWS
+            </a>
+
+            <!-- Navbar Collapse -->
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Navigation Desctop -->
+
+            <nav class="nav-desctop hidden-xs hidden-sm">
+                <ul class="nav-desctop-list">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'community' %}">Community</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'console' %}">Console</a>
+                    </li>
+                    <li>
+                        <a class="active" href="{% url 'account_logout' %}">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'account_signup'%}">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'account_login' %}">Log In</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+            <!-- Navigation Mobile -->
+
+            <nav class="nav-mobile hidden-md hidden-lg">
+                <div class="collapse navbar-collapse" id="nav-collapse">
+                    <ul class="nav-mobile-list">
+                        <li class="active">
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'community' %}">Community</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'console' %}">Console</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account_logout' %}">Log Out</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'account_signup'%}">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account_login' %}">Log In</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home -->
+    {% block content %}
+
+    {% endblock content %}
+    <!-- Banner -->
+
+    <section class="promo bg-primary section-sm">
+        <div class="container rel-1">
+            <h2 class="promo-title text-white">Hey! Build Your Own <i>Digital PC Now!</i></h2>
+            {% if user.is_authenticated %}
+            <a href="{% url 'gettingstarted' %}" data-toggle="modal" class="btn btn-b-white">Get start now</a>
+            {% else %}
+            <a href="{% url 'account_signup' %}" data-toggle="modal" class="btn btn-b-white">Get start now</a>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer id="footer" class="footer bg-dark">
+        <div class="container">
+            <div class="row-base row-space row">
+                <div class="brand-info col-base col-space col-sm-6 col-md-3">
+                    <a href="#top" class="brand js-target-scroll">
+                        NWS
+                    </a>
+                    <p>We create cloud solutions for the help and growth of you & your business.</p>
+                    <address><strong class="text-white">E-mail:</strong> numbuswebserver@gmail.com</address>
+                </div>
+                <div class="col-base col-space col-sm-6 col-md-2">
+                    <strong class="footer-title">GO TO</strong>
+                    <ul class="nav-bottom">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'privacypolicy' %}">Privacy Policy</a></li>
+                        <li><a href="{% url 'terms&condition' %}">Terms and Condition</a></li>
+                    </ul>
+                </div>
+                <div class="col-subscribe col-base col-space col-sm-6 col-md-3">
+                    <strong class="footer-title">Newsletter</strong>
+                    <form class="subscribe-form js-subscribe-form">
+                        <div class="input-group">
+                            <input id="mc-email" type="email" class="input-round form-control" placeholder="Email">
+                            <span class="input-group-btn">
+                                <button class="btn" type="submit"><span class="icon-arrow-right"></span></button>
+                            </span>
+                        </div>
+                        <label class="mc-label" for="mc-email" id="mc-notification"></label>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyrights">
+                    © Copyright 2020 Nimbus Web Server. All Rights Reserved
+                </div>
+                <ul class="social-list">
+                    <li><a href="www.facebook.com/hariomkvyas" class="fa fa-facebook"></a></li>
+                    <li><a href="www.twitter.com/hariomkvyas" class="fa fa-twitter"></a></li>
+                    <li><a href="www.linkedin.com/in/hariomkvyas" class="fa fa-linkedin"></a></li>
+                    <li><a href="www.instagram.com/hariomkvyas" class="fa fa-instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- Modals -->
+
+    <div id="request" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">&times;</span>
+                    <h2 class="modal-title">Send request</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form-request js-ajax-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" required placeholder="Email *">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="3" name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-block">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals success -->
+
+    <div id="success" class="modal modal-message fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></span>
+                    <h2 class="modal-title">Thank you</h2>
+                    <p class="modal-subtitle">Your message is successfully sent...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals error -->
+
+    <div id="error" class="modal modal-message fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></span>
+                    <h2 class="modal-title">Sorry</h2>
+                    <p class="modal-subtitle"> Something went wrong </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/jquery.viewport.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jarallax.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.js' %}"></script>
+
+    <!-- SLIDER REVOLUTION -->
+    <script src="{% static 'js/rev-slider/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/jquery.themepunch.revolution.min.js' %}"></script>
+
+    <!-- SLIDER REVOLUTION 5x EXTENSIONS   -->
+    <script src="{% static 'js/rev-slider/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'js/rev-slider-init.js' %}"></script>
+    <script src="{% static 'js/interface.js' %}"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e70756f8d24fc2265880101/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>

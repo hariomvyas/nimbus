@@ -1,0 +1,354 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'apple-touch-icon-114x114.png' %}">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <!-- Home -->
+
+    <main class="main">
+
+        <div class="arrow-left hidden-xs">
+            <span class="icon-chevron-left"></span>
+        </div>
+        <div class="arrow-right hidden-xs">
+            <span class="icon-chevron-right"></span>
+        </div>
+
+        <!-- Start revolution slider -->
+
+        <div class="rev_slider_wrapper">
+            <div id="rev_slider" class="rev_slider fullscreenbanner">
+                <ul>
+
+                    <!-- Slide 1 -->
+
+                    <li data-transition='slideleft' data-slotamount='default' data-masterspeed="1500"
+                        data-fsmasterspeed="1000">
+
+                        <!-- Main image-->
+
+                        <img src="{% static 'img/slider/img1.jpg' %}" alt="" data-bgposition="center center"
+                            data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+
+                        <!-- Layer 1 -->
+
+                        <div class="slider-title tp-caption" data-x="['center','center','center','center']"
+                            data-hoffset="['0']" data-y="['middle','middle','middle','middle']" data-voffset="['-80']"
+                            data-textAlign="['center','center','center','center']"
+                            data-fontsize="['70', '60','50','40']" data-lineheight="['80','70', '60','50']"
+                            data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                            data-transform_in="x:[105%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
+                            data-splitout="none" data-responsive_offset="on" data-elementdelay="0.05">Cloud Solutions,
+                            <i>Nimbus</i>
+                        </div>
+
+                        <!-- Layer 2 -->
+
+                        <div class="slider-text tp-caption" data-x="['center','center','center','center']"
+                            data-hoffset="['0']" data-y="['middle','middle','middle','middle']" data-voffset="['20']"
+                            data-textAlign="['center','center','center','center']" data-fontsize="['18']"
+                            data-lineheight="['32']" data-whitespace="normal" data-width="['900','700','600','500']"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
+                            data-transform_out="opacity:0;s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="1500" data-splitin="none"
+                            data-splitout="none"><span style="opacity:0.9">We provide cloud solutions with,<br> Endless
+                                Results.</span>
+                        </div>
+
+                        <!-- Layer 3 -->
+
+                        <div class="tp-caption" data-x="['center','center','center','center']" data-hoffset="['0']"
+                            data-y="['middle','middle','middle','middle']" data-voffset="['125']" data-width="none"
+                            data-fontsize="['16']" data-height="none" data-whitespace="nowrap"
+                            data-transform_idle="o:1;"
+                            data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                            data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+                            data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+                            data-transform_out="y:50px;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_out="x:inherit;y:inherit;" data-start="1500" data-splitin="on"
+                            {% if user.is_authenticated %} data-splitout="none" data-responsive_offset="on"><a
+                                href="{% url 'console' %}" class="btn" data-toggle="modal">Get start now</a>
+                            {% else %}
+                            data-splitout="none" data-responsive_offset="on"><a href="{% url 'signup' %}" class="btn"
+                                data-toggle="modal">Get start now</a>
+                            {% endif %}
+                        </div>
+                    </li>
+
+                    <!-- Slide 2 -->
+
+                    <li data-transition='slideleft' data-slotamount='default' data-masterspeed="1500"
+                        data-fsmasterspeed="1000">
+
+                        <!-- Main image-->
+
+                        <img src="{% static 'img/slider/img2.jpg' %}" alt="" data-bgposition="center center"
+                            data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+
+                        <!-- Layer 1 -->
+
+                        <div class="slider-title tp-caption" data-x="['center','center','center','center']"
+                            data-hoffset="['0']" data-y="['middle','middle','middle','middle']" data-voffset="['-80']"
+                            data-textAlign="['center','center','center','center']"
+                            data-fontsize="['70', '60','50','40']" data-lineheight="['80','70', '60','50']"
+                            data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                            data-transform_in="x:[105%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
+                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
+                            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
+                            data-splitout="none" data-responsive_offset="on" data-elementdelay="0.05">Digital,
+                            <i>Creative</i>
+                        </div>
+
+                        <!-- Layer 2 -->
+
+                        <div class="slider-text tp-caption" data-x="['center','center','center','center']"
+                            data-hoffset="['0']" data-y="['middle','middle','middle','middle']" data-voffset="['20']"
+                            data-textAlign="['center','center','center','center']" data-fontsize="['18']"
+                            data-lineheight="['32']" data-whitespace="normal" data-width="['900','700','600','500']"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
+                            data-transform_out="opacity:0;s:1000;s:1000;"
+                            data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="1500" data-splitin="none"
+                            data-splitout="none"><span style="opacity:0.9">We create solutions combining Cloud,<br> a
+                                creative and industry experience.</span>
+                        </div>
+
+                        <!-- Layer 3 -->
+
+                        <div class="tp-caption" data-x="['center','center','center','center']" data-hoffset="['0']"
+                            data-y="['middle','middle','middle','middle']" data-voffset="['125']" data-width="none"
+                            data-fontsize="['16']" data-height="none" data-whitespace="nowrap"
+                            data-transform_idle="o:1;"
+                            data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                            data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+                            data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
+                            data-transform_out="y:50px;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                            data-mask_out="x:inherit;y:inherit;" data-start="1500" data-splitin="on"
+                            {% if user.is_authenticated %} data-splitout="none" data-responsive_offset="on"><a
+                                href="{% url 'console' %}" class="btn" data-toggle="modal">Get start now</a>
+                            {% else %}
+                            data-splitout="none" data-responsive_offset="on"><a href="{% url 'signup' %}" class="btn"
+                                data-toggle="modal">Get start now</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mouse-helper">
+            <i class="icon ion-mouse"></i>
+        </div>
+    </main>
+
+    <div class="content">
+
+        <!-- Features -->
+
+        <section class="features bg-dark section">
+            <div class="container">
+                <div class="row-base row">
+                    <div class="col-base col-feature col-sm-6 col-md-4">
+                        <div class="media-left"><i class="icon text-white icon-new-tab"></i></div>
+                        <div class="media-right">
+                            <h5 class="text-white">Web Computing</h5>
+                            <p>Ever wondered how some Creators always manage to get the best result and complete their
+                                work.</p>
+                        </div>
+                    </div>
+                    <div class="col-base col-feature col-sm-6 col-md-4">
+                        <div class="media-left"><i class="icon text-white icon-smartphone-embed"></i></div>
+                        <div class="media-right">
+                            <h5 class="text-white">Mobile Computing</h5>
+                            <p>Ever wondered how some Application Developers always manage to produce beautiful looking
+                                Applications which works on every platform without problems.</p>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-base col-feature col-sm-6 col-md-4">
+                        <div class="media-left"><i class="icon text-white icon-laptop-phone"></i></div>
+                        <div class="media-right">
+                            <h5 class="text-white">Digital PC</h5>
+                            <p>Ever wondered how some people always manage to work comfortably everywhere like they are
+                                at their home with their own PC on hand.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light">
+            <div class="container">
+                <div class="flex-md-middle row-space row-base row">
+                    <div class="col-space col-base col-md-6">
+                        <img alt="" class="img-responsive w100" src="{% static 'img/prosols.jpg' %}">
+                    </div>
+                    <div class="col-space col-base col-md-6">
+                        <h3 class="section-title">We solve business<br> problems</h3>
+                        <p>We solve business problems of every digital type. Use Nimbus Web Server with endless
+                            possibilities. Create, Design & Develop systems. Take your work to anywhere, anytime to the
+                            next level.</p>
+                        <div class="overview">
+                            <a href="http://www.youtube.com/" class="icon-video-play js-video-play"></a>
+                            <span class="text">watch overview</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="flex-md-middle row-space row-base row">
+                    <div class="col-space col-base col-md-6">
+                        <h3 class="section-title">Specialization</h3>
+                        <p>We specialize in Cloud Solutions providing Cloud Computing, App Computing & Many more. We are
+                            there for you everytime with unlimited support.</p>
+                        <div class="skills">
+                            <div class="progress-bar-title">Cloud Computing</div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="75">
+                                    <span>75%</span>
+                                </div>
+                            </div>
+                            <div class="progress-bar-title">App Computing</div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="75">
+                                    <span>75%</span>
+                                </div>
+                            </div>
+                            <div class="progress-bar-title">Support</div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="100">
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-space col-base col-md-6">
+                        <img alt="" class="img-responsive w100" src="{% static 'img/specialization.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row">
+                    <header class="text-center col-md-8 col-md-offset-2">
+                        <h2 class="section-title">About our Developers</h2>
+                        <p>Our team of Developers play an important part in the Nimbus Web Server providing you with the
+                            all services, support and always finding new things to make your life more easier.</p>
+                    </header>
+                </div>
+            </div>
+            <br />
+            <section class="team bg-light">
+                <div class="clearfix">
+                    <div class="col-team col-sm-6 col-lg-3">
+                        <figure class="team-profile">
+                            <img alt="" src="{% static 'img/team/dev1.jpg' %}">
+                            <figcaption class="team-caption">
+                                <div class="team-meta">
+                                    <strong class="team-name">Hariom Vyas</strong>
+                                    <span class="team-spec">CEO / Founder</span>
+                                </div>
+                                <ul class="team-social social-list">
+                                    <li><a href="www.facebook.com/hariomkvyas" class="fa fa-facebook"></a></li>
+                                    <li><a href="www.twitter.com/hariomkvyas" class="fa fa-twitter"></a></li>
+                                    <li><a href="www.linkedin.com/in/hariomkvyas" class="fa fa-linkedin"></a></li>
+                                    <li><a href="www.instagram.com/hariomkvyas" class="fa fa-instagram"></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-team  col-sm-6 col-lg-3">
+                        <figure class="team-profile">
+                            <img alt="" src="{% static 'img/team/dev2.jpg' %}">
+                            <figcaption class="team-caption">
+                                <div class="team-meta">
+                                    <strong class="team-name">Jainee Dave</strong>
+                                    <span class="team-spec">CoFounder</span>
+                                </div>
+                                <ul class="team-social social-list">
+                                    <li><a href="www.facebook.com/" class="fa fa-facebook"></a></li>
+                                    <li><a href="www.twitter.com/" class="fa fa-twitter"></a></li>
+                                    <li><a href="https://www.linkedin.com/in/jaini-shaileshbhai-56133918b"
+                                            class="fa fa-linkedin"></a></li>
+                                    <li><a href="www.instagram.com/" class="fa fa-instagram"></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-team col-sm-6 col-lg-3">
+                        <figure class="team-profile">
+                            <img alt="" src="{% static 'img/team/dev3.jpg' %}">
+                            <figcaption class="team-caption">
+                                <div class="team-meta">
+                                    <strong class="team-name">Mitashu Patel</strong>
+                                    <span class="team-spec">CoFounder</span>
+                                </div>
+                                <ul class="team-social social-list">
+                                    <li><a href="https://www.facebook.com/miitashu" class="fa fa-facebook"></a></li>
+                                    <li><a href="https://twitter.com/mitashu_patel" class="fa fa-twitter"></a></li>
+                                    <li><a href="https://in.linkedin.com/in/mitashu-patel-2055aa142"
+                                            class="fa fa-linkedin"></a></li>
+                                    <li><a href="https://www.instagram.com/mitashu_patel/" class="fa fa-instagram"></a>
+                                    </li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-team col-sm-6 col-lg-3">
+                        <figure class="team-profile">
+                            <img alt="" src="{% static 'img/team/intguide.jpg' %}">
+                            <figcaption class="team-caption">
+                                <div class="team-meta">
+                                    <strong class="team-name">Prof. Shreyash Patel</strong>
+                                    <span class="team-spec">Mentor/Guide</span>
+                                </div>
+                                <ul class="team-social social-list">
+                                    <li><a href="www.facebook.com/" class="fa fa-facebook"></a></li>
+                                    <li><a href="www.twitter.com/" class="fa fa-twitter"></a></li>
+                                    <li><a href="www.linkedin.com/" class="fa fa-linkedin"></a></li>
+                                    <li><a href="www.instagram.com/" class="fa fa-instagram"></a></li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </section>
+</body>
+
+</html>
+
+{% endblock content %}
