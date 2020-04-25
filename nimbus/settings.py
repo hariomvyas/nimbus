@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
-ENVIRONMENT = os.environ.get('ENVIRONMENT', default='development')
+ENVIRONMENT = os.environ.get('ENVIRONMENT', default='production')
 
 # production - Security from Cross Site Scripting
 if ENVIRONMENT == 'production':
@@ -112,7 +112,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nimbus',
         'USER': 'postgres',
-        'PASSWORD': '18318iscoming',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
