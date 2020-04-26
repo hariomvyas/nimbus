@@ -44,6 +44,7 @@ if ENVIRONMENT == 'production':
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True  # SecureCookies
     CSRF_COOKIE_SECURE = True
+    DEBUG = False
 
 
 # Application definition
