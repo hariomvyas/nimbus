@@ -195,7 +195,7 @@ ACCOUNT_EMAIL_REQUIRED = True  # new
 ACCOUNT_UNIQUE_EMAIL = True  # new
 
 
-DEFAULT_FROM_EMAIL = 'admin@nimbus.com'
+DEFAULT_FROM_EMAIL = 'nimbuswebserver@gmail.com'
 
 
 MEDIA_URL = '/media/'
