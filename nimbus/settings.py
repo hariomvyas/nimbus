@@ -16,6 +16,8 @@ import socket
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# export SECRET_KEY = "ef3c77d3abbb7e3822001582dfa05bf1e2b6418a3a3c2837"
+# export DEBUG_VALUE = "True"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -28,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
-ENVIRONMENT = os.environ.get('ENVIRONMENT', default='production')
+ENVIRONMENT = os.environ.get('ENVIRONMENT', default='development')
 
 # production - Security from Cross Site Scripting
 if ENVIRONMENT == 'production':
@@ -66,6 +68,7 @@ INSTALLED_APPS = [
     'community.apps.CommunityConfig',
     'services.apps.ServicesConfig',
     'console.apps.ConsoleConfig',
+    'storages',
 
 ]
 
@@ -112,7 +115,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nimbus',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': '18318iscoming',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -206,3 +209,13 @@ INTERNAL_IPS = '127.0.0.1'
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 604800
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
+
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
