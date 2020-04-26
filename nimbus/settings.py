@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0ea1f527b58e3baa278d51ae98aa3dd7295978e5b9b786e1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['nimbuswebserver.herokuapp.com']
 
@@ -44,7 +44,6 @@ if ENVIRONMENT == 'production':
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True  # SecureCookies
     CSRF_COOKIE_SECURE = True
-    DEBUG = False
 
 
 # Application definition
