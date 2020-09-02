@@ -1,5 +1,7 @@
 # Nimbus Web Server
 
+Nimbus Web Server Website is created using Django Web Framework & Bootstrap
+
 Working Website is at -
 nimbuswebserver.herokuapp.com
 
